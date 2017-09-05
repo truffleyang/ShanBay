@@ -15,7 +15,7 @@ def addWord(word):
 			print("Invalid Word") 
 			return False
 
-		add = requests.post('https://api.shanbay.com/bdc/learning/?access_token' + access_token, data = {'id':wordId})
+		add = requests.post('https://api.shanbay.com/bdc/learning/?access_token=' + access_token, data = {'id':wordId})
 		addresult = json.loads(add.content)
 		if "msg" not in addresult or addresult["msg"] != "SUCCESS":
 			print("Failed at Adding Word") 
